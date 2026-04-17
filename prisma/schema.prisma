@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model tb_users {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  username      String
+  password      String
+  tb_jwt_tokens tb_jwt_token[]
+  tb_products   tb_product[]
+}
+
+model tb_jwt_token {
+  token   String   @id
+  user_id String
+  tb_user tb_users @relation(fields: [user_id], references: [id])
+  expiresAt DateTime
+}
+
+model tb_product {
+  id      String   @id @default(uuid())
+  name    String
+  sku     String
+  user_id String
+  tb_user tb_users @relation(fields: [user_id], references: [id])
+}
