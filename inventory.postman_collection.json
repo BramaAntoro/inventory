@@ -1,0 +1,218 @@
+{
+  "info": {
+    "_postman_id": "5e2c46a0-0b26-4831-a6a9-ce6c67c3c611",
+    "name": "inventory",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40432064"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"tes\",\n    \"email\": \"tes@gmail.com\",\n    \"password\": \"tes12\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"tes@gmail.com\",\n    \"password\": \"tes12\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjllOGFjZjUzLTI5YmMtNDRlNi1hYjEzLWRkYzIzNGRjMGU0NSIsInVzZXJuYW1lIjoidGVzIiwiZW1haWwiOiJ0ZXNAZ21haWwuY29tIiwiaWF0IjoxNzc2NDEzMTkyLCJleHAiOjE3NzY0OTk1OTJ9.MXg-uM-fLsxNWLVaIIvsluAyUCscO53IUSM1ZxeNznM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"tes\",\n    \"sku\": \"SKU-100\",\n    \"stock\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjllOGFjZjUzLTI5YmMtNDRlNi1hYjEzLWRkYzIzNGRjMGU0NSIsInVzZXJuYW1lIjoidGVzIiwiZW1haWwiOiJ0ZXNAZ21haWwuY29tIiwiaWF0IjoxNzc2NDEzMTkyLCJleHAiOjE3NzY0OTk1OTJ9.MXg-uM-fLsxNWLVaIIvsluAyUCscO53IUSM1ZxeNznM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"tes\",\n    \"sku\": \"SKU-100\",\n    \"stock\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get Copy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjllOGFjZjUzLTI5YmMtNDRlNi1hYjEzLWRkYzIzNGRjMGU0NSIsInVzZXJuYW1lIjoidGVzIiwiZW1haWwiOiJ0ZXNAZ21haWwuY29tIiwiaWF0IjoxNzc2NDEzMTkyLCJleHAiOjE3NzY0OTk1OTJ9.MXg-uM-fLsxNWLVaIIvsluAyUCscO53IUSM1ZxeNznM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"tes\",\n    \"sku\": \"SKU-100\",\n    \"stock\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/product/4ca8b85f-6ede-4307-a81b-8f8c0d997824",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "product",
+                "4ca8b85f-6ede-4307-a81b-8f8c0d997824"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
