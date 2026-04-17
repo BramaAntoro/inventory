@@ -22,9 +22,9 @@ model tb_users {
 }
 
 model tb_jwt_token {
-  token   String   @id
-  user_id String
-  tb_user tb_users @relation(fields: [user_id], references: [id])
+  token     String   @id
+  user_id   String
+  tb_user   tb_users @relation(fields: [user_id], references: [id])
   expiresAt DateTime
 }
 
@@ -32,6 +32,7 @@ model tb_product {
   id      String   @id @default(uuid())
   name    String
   sku     String
+  stock   Int
   user_id String
   tb_user tb_users @relation(fields: [user_id], references: [id])
 }
