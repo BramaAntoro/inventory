@@ -16,7 +16,7 @@ export default async function postProductController(
     console.log({ req });
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
-    const user = await verifyToken(token)
+    const user = await verifyToken(token, JWT_SECRET)
 
     const data: TypeProductRequest = {
       ...req.body,
